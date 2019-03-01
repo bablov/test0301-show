@@ -1,0 +1,65 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>博彦智能教育平台-登陆</title>
+
+
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="admin/js/jquery-1.10.2.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
+    <!--if lt IE 9
+    script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+    script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    -->
+</head>
+<body>
+    <section class="material-half-bg">
+        <div class="cover"></div>
+    </section>
+    <section class="login-content">
+        <div class="logo">
+            <!-- <h1>Vali</h1> -->
+        </div>
+        <div class="login-box">
+            <form class="login-form" action="/Accounts/Login" method="post">
+                <h3 class="login-head">博彦智能教育平台</h3>
+                <div class="form-group">
+                    <label class="control-label">Key</label>
+                    <input class="form-control" placeholder="请输入Key码" autofocus type="text" data-val="true" data-val-length="The field AccountName must be a string with a maximum length of 20." data-val-length-max="20" id="AccountName" name="AccountName" value="" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Script</label>
+                    <input class="form-control" type="password" placeholder="请输入Script码" data-val="true" data-val-length="&#x957F;&#x5EA6;&#x5FC5;&#x987B;&#x5927;&#x4E8E;6&#x5C0F;&#x4E8E;20." data-val-length-max="20" data-val-length-min="6" data-val-required="The Password field is required." id="Password" name="Password" />
+                </div>
+                <div class="text-info validation-summary-valid" data-valmsg-summary="true">
+                    <ul>
+                        <li>若您没有Key码和Script码，请联系博彦获取</li>
+                    </ul>
+                </div>
+                <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
+                    <ul>
+                        <li style="display:none">请联系BYS获取使用网站初始化相关参数</li>
+                    </ul>
+                </div>
+
+                <div class="form-group btn-container">
+                    <a href="camera/photo.html" type="submit" class="btn btn-primary btn-block"> 开始初始化设置</a>
+                </div>
+
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8PwaErLLpqZLjH8b4R3A9tPG4WqbI2Asyb4iEXKVtKX0Br0sVvcn5aXqURP9HqJUS2OcWfCzhkC0Lo1dn2Smzu0ScduNxGG0QzfUJts0T7059HyAW9PJqGkC7OfHqyon7JBTVbacZHwjlWgfhHGof6I" />
+            </form>
+
+        </div>
+    </section>
+    <!--<script src="/js/jquery-2.1.4.min.js"></script>-->
+    
+</body>
+
+</html>
