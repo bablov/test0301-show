@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <link href="example.css" rel="stylesheet" />
+    <link href="weui.css" rel="stylesheet" />
+    <link href="fonts/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="weui-cells__title">个人信息</div>
+    <div class="weui-cells weui-cells_form">       
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label for="" class="weui-label">姓名</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" id="name" value="" />
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label for="" class="weui-label">公司</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" id="company" value="" placeholder="" />
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">手机号</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="tel" id="phone">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label for="" class="weui-label">邮箱</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" id="email" value="" placeholder="" />
+            </div>
+        </div>
+        <div class="button-sp-area">
+            <button class="weui-btn weui-btn_plain-default" id="submit">提交</button>
+        </div>
+    </div>
+
+
+    <script>
+    $("#submit").click(function () {
+        $('#loadingToast').show();
+
+        var data = {};
+        data.webChartNickName = '@Model.nickname';
+        data.userName = $("#name").val();
+        data.WebOpenID = '@Model.openid';
+        data.country = '@Model.country';
+        data.province = '@Model.province';
+        data.city = '@Model.city';
+        data.company = $("#company").val();
+        data.phone = $("#phone").val();
+        data.email = $("#email").val();
+        //var data ='{"webChartNickName":"夏威濠","userName":"夏威濠","WebOpenID":"oYP6dt1GzGLsabrZGSz9KH5QhGOM","country":"中国","province":"上海","city":"黄浦"}'//,silimarFaceID:08b8f172-f529-4b7a-984d-f78973356a71
+        var formdata = JSON.stringify(data);
+        $.ajax({
+            url: webapi+"/persons/demo/bindByFaceID/@ViewBag.State",//测试地址
+            dataType: 'json',
+            type: "Post",
+            data: formdata,
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            success: function (result) {
+                $("#loadingToast").attr("style", "display:none;")
+                $("#success").show();
+
+                //$.ajax({
+                //    url: '../api/Values/SendImage',
+                //    dataType: 'json',
+                //    type: "Post",
+                //    async: false,
+                //    contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                //    data: { OriginalUrl: result.originalUrl, ExtractUrl: result.extractUrl, OpenId:data.WebOpenID },//data.WebOpenID },
+
+                //})
+                //var msgdata = {};
+                //msgdata.meetname = {};
+                //msgdata.meetname.value = "测试会议";
+                //ms
+
+                $.ajax({
+                    url: '../api/values/sendtemplatemsd/'+data.WebOpenID,
+                    dataType: 'json',
+                    type: "Post",
+                    async: false,
+                    contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                    data: '{"meetname":{"value":"测试会议","color":"#173177"},"time":{"value":"0322","color":"#173177"}}',
+
+                })
+
+                WeixinJSBridge.call('closeWindow');
+            },
+            error: function (result) {
+                $("#loadingToast").attr("style", "display:none;")
+                $("#warn").show();
+            }
+        });
+        return false;
+    })
+    </script>
+</body>
+
+</html>

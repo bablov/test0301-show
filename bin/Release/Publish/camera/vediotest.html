@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <video id="video" width="320" height="320" autoplay></video>
+    <button id="snap">Snap Photo</button>
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <div id="tooltip1">中国</div>
+</body>
+
+</html>
+<script type="text/javascript">
+// Put event listeners into place
+window.addEventListener("DOMContentLoaded", function() {
+    // Grab elements, create settings, etc.
+    var canvas = document.getElementById("canvas"),
+        context = canvas.getContext("2d"),
+        video = document.getElementById("video"),
+        videoObj = {
+            "video": true
+        },
+        errBack = function(error) {
+            console.log("Video capture error: ", error.code);
+        };
+
+    // Put video listeners into place
+    if (navigator.getUserMedia) { // Standard
+        navigator.getUserMedia(videoObj, function(stream) {
+            video.src = stream;
+            video.play();
+        }, errBack);
+    } else if (navigator.webkitGetUserMedia) { // WebKit-prefixed
+        navigator.webkitGetUserMedia(videoObj, function(stream) {
+            video.src = window.URL.createObjectURL(stream);
+            video.play();
+        }, errBack);
+    } else if (navigator.mozGetUserMedia) { // Firefox-prefixed
+        navigator.mozGetUserMedia(videoObj, function(stream) {
+            video.src = window.URL.createObjectURL(stream);
+            video.play();
+        }, errBack);
+    }
+}, false);
+
+// Trigger photo take
+document.getElementById("snap").addEventListener("click", function() {
+    var context = canvas.getContext("2d")
+        //context.drawImage(video, 0, 0, 640, 480);
+    context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight)
+
+});
+document.getElementById("canvas").addEventListener("onmouseenter", function() {
+    //var t1 = document.getElementById("canvas");
+    //t1.onmouseenter = function () {
+    //   showTooltip(this, "t1", '中华人民共和国', 200);
+    // };   
+    console.log(1)
+});
+
+var className = 'tooltip-box';
+
+var isIE = navigator.userAgent.indexOf('MSIE') > -1;
+
+function showTooltip(obj, id, html, width, height) {
+    if (document.getElementById(id) == null) {
+
+        var tooltipBox;
+        tooltipBox = document.createElement('div');
+        tooltipBox.className = className;
+        tooltipBox.id = id;
+        tooltipBox.innerHTML = html;
+
+        obj.appendChild(tooltipBox);
+
+        tooltipBox.style.width = width ? width + 'px' : 'auto';
+        tooltipBox.style.height = height ? height + 'px' : 'auto';
+
+        if (!width && isIE) {
+            tooltipBox.style.width = tooltipBox.offsetWidth;
+        }
+
+        tooltipBox.style.position = "absolute";
+        tooltipBox.style.display = "block";
+
+        var left = obj.offsetLeft;
+        var top = obj.offsetTop + 20;
+
+        if (left + tooltipBox.offsetWidth > document.body.clientWidth) {
+            var demoLeft = document.getElementById("demo").offsetLeft;
+            left = document.body.clientWidth - tooltipBox.offsetWidth - demoLeft;
+            if (left < 0) left = 0;
+        }
+
+        tooltipBox.style.left = left + 'px';
+        tooltipBox.style.top = top + 'px';
+
+        obj.onmouseleave = function() {
+            setTimeout(function() {
+                document.getElementById(id).style.display = "none";
+            }, 100);
+        };
+
+    } else {
+        document.getElementById(id).style.display = "block";
+    }
+}
+</script>

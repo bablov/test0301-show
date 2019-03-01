@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width">
+		
+		<title>Camera</title>
+		
+		
+		<link rel="stylesheet" href="css/fonts.css">
+		<link rel="stylesheet" href="css/lightgrid.css">
+		<link rel="stylesheet" href="css/layout.css">
+		<link rel="stylesheet" href="css/camera.css">
+		<link rel="stylesheet" href="css/prism.css">
+		
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script src="js/prism.js"></script>
+		<script src="dist/camera.js"></script>
+        <style>
+            #tooltip{
+              width: 200px;
+    padding: 20px;
+    border: 1px solid #b3d4fc;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255,255, 0.8);
+    z-index: 666;
+    display: none;
+            }
+            p{margin:5px}
+        </style>
+	</head>
+	
+	<body class="row">
+
+		<section class="main col-8 offset-2">
+			<label>请点击拍照</label><span class="input icon-camera camera"></span>
+			<div class="image-container">
+				
+			</div>
+		</section>
+        <div id="tooltip"></div>
+		<script type="text/javascript">
+			
+			var camera;
+			
+			function startCamera() {
+				if(camera) {
+					camera.start();
+				} else {
+					camera = new Camera({
+						mirror : false,
+						onSnap : function(encode) {
+							//console.log(encode);
+							var el = document.getElementsByClassName('image-container')[0];
+							var img = new Image();
+							
+							img.onload = function() {
+								el.appendChild(img);
+							}
+							img.className = 'avatar';
+							img.src = encode;
+                            img.onmouseenter = function (e) {
+                                    tooltip(e.clientX,e.clientY);
+                            };
+                            img.onmouseleave = function(){
+                                
+                                document.getElementById("tooltip").style.display = "none";
+						    };
+						}
+					});
+					camera.start();
+				}
+			}
+			
+			var el = document.getElementsByClassName('camera')[0];
+			el.addEventListener('click', startCamera);
+
+            function tooltip(x,y){
+                var tool=document.getElementById("tooltip");
+                    tool.innerHTML="<p>微笑值：80</p><p>微笑值：80</p><p>幸福感：80</p><p>认真值：80</p>";
+                    tool.style.left=x+10+"px";
+                    tool.style.top=y+10+"px";
+                    tool.style.display = "block";
+
+            }
+   
+		</script>
+	</body>
+</html>

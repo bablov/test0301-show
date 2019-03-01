@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+    <div id="result">
+
+    </div>
+
+    <script src="../camera/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.ajax({
+                url: webapi+"/fookstore/visit",
+                dataType: 'json',
+                success: function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        var html = '<a target="_blank" href="../camera/person.html?personkey=' + data[i].personid + '&groupkey=' + data[i].groupkey + '" class="btn btn-outline btn-primary">访问次数:' + data[i].visitcount + '|最后访问时间:' + data[i].lastvisittime + '|最后更新时间:' + data[i].updatetime + '</a>||<a target="_blank" href="../admin/profile.html?personkey=' + data[i].personid + '&personGroupKey=' + data[i].groupkey + '" class="btn btn-outline btn-primary">face特征列表</a><br/>';
+                        $("#result").append(html);
+                    }
+                    
+                }
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\baeba\Source\Repos\ABC.ETCofe.MemberAdmin\ABC.FaceSign.Admin\ABC.FaceSign.Admin\bin\Release\Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="admin/css/bootstrap-reset.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/css/bootstrap.min.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/css/custom-ico-fonts.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/css/jquery-ui-1.10.3.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/css/style-responsive.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/css/style.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/css/style2.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/demo.html">
+      <publishTime>03/01/2019 18:17:51</publishTime>
+    </File>
+    <File Include="admin/demo/BindDemo.html">
+      <publishTime>02/27/2019 13:36:29</publishTime>
+    </File>
+    <File Include="admin/demo/example.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/demo/fonts/css/font-awesome.min.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/demo/fonts/fonts/fontawesome-webfont.ttf">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/demo/fonts/fonts/fontawesome-webfont.woff">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/demo/weui.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/example.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/fonts/css/font-awesome.min.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/fonts/fonts/fontawesome-webfont.ttf">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/fonts/fonts/fontawesome-webfont.woff">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/avatar-mini.jpg">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/blog/blog-thumb-1.jpg">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/gallery/image1.jpg">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/gallery/image2.jpg">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/gallery/image3.jpg">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/gallery/image4.jpg">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/gallery/image5.jpg">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/logo.png">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/logo_icon.png">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/minus.png">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/photos/user-avatar.png">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/photos/user1.png">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/photos/user2.png">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/photos/user3.png">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/photos/user4.png">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/photos/user5.png">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/plus-white.png">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/images/plus.png">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/bootstrap.min.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/dist/clipboard.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/dist/clipboard.min.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/html5shiv.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/ion.rangeSlider-1.8.2/css/ion.rangeSlider.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/ion.rangeSlider-1.8.2/css/ion.rangeSlider.skinFlat.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/ion.rangeSlider-1.8.2/img/sprite-skin-flat.png">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/ion.rangeSlider-1.8.2/js/ion-rangeSlider/ion.rangeSlider.min.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/jquery-1.10.2.min.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/jquery-migrate-1.2.1.min.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/jquery-ui-1.9.2.custom.min.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/jquery.isotope.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/jquery.nicescroll.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/modernizr.min.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/respond.min.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/scripts.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/sparkline/jquery.sparkline.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/js/sparkline/sparkline-init.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/personList.html">
+      <publishTime>03/01/2019 18:50:17</publishTime>
+    </File>
+    <File Include="admin/personList3.html">
+      <publishTime>02/27/2019 13:53:56</publishTime>
+    </File>
+    <File Include="admin/personListbak.html">
+      <publishTime>03/01/2019 16:25:36</publishTime>
+    </File>
+    <File Include="admin/photo/photo.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="admin/profile.html">
+      <publishTime>02/27/2019 13:54:13</publishTime>
+    </File>
+    <File Include="admin/visitlist.html">
+      <publishTime>02/27/2019 13:55:02</publishTime>
+    </File>
+    <File Include="admin/weui.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="bin/ABC.FaceSign.Admin.dll">
+      <publishTime>03/01/2019 19:51:53</publishTime>
+    </File>
+    <File Include="bin/ABC.FaceSign.Admin.pdb">
+      <publishTime>03/01/2019 19:51:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>12/13/2016 03:10:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="camera/camera.html">
+      <publishTime>02/27/2019 13:40:02</publishTime>
+    </File>
+    <File Include="camera/css/bootstrap/css/bootstrap-theme.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/bootstrap/css/bootstrap-theme.css.map">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/bootstrap/css/bootstrap-theme.min.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/bootstrap/css/bootstrap-theme.min.css.map">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/bootstrap/css/bootstrap.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/bootstrap/css/bootstrap.css.map">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/bootstrap/css/bootstrap.min.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/bootstrap/css/bootstrap.min.css.map">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/bootstrap/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/bootstrap/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/bootstrap/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/bootstrap/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/bootstrap/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/bootstrap/js/bootstrap.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/bootstrap/js/bootstrap.min.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/bootstrap/js/npm.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/camera.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/fonts.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/fonts/camera.svg">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/fonts/icomoon.eot">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/fonts/icomoon.svg">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/fonts/icomoon.ttf">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/fonts/icomoon.woff">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/layout.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/lightgrid.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/magister.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/metisMenu/metisMenu.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/metisMenu/metisMenu.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/metisMenu/metisMenu.min.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/metisMenu/metisMenu.min.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/prism.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/sb-admin-2.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/css/timeline.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/dashboard.html">
+      <publishTime>02/27/2019 13:48:13</publishTime>
+    </File>
+    <File Include="camera/demo.html">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/dist/camera.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/face.html">
+      <publishTime>02/27/2019 13:43:38</publishTime>
+    </File>
+    <File Include="camera/font-awesome/css/font-awesome.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/font-awesome/css/font-awesome.min.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/font-awesome/fonts/fontawesome-webfont.eot">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/font-awesome/fonts/fontawesome-webfont.svg">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/font-awesome/fonts/fontawesome-webfont.ttf">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/font-awesome/fonts/fontawesome-webfont.woff">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/font-awesome/fonts/FontAwesome.otf">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/images/body4.jpg">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/images/loading.gif">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/images/userphoto.jpg">
+      <publishTime>03/01/2019 15:45:26</publishTime>
+    </File>
+    <File Include="camera/img/a.png">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/img/b.png">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/img/c.png">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/img/d.png">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/img/pic.png">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/index-old.html">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/index.html">
+      <publishTime>03/01/2019 18:43:52</publishTime>
+    </File>
+    <File Include="camera/indntify.html">
+      <publishTime>02/27/2019 13:36:29</publishTime>
+    </File>
+    <File Include="camera/js/bootstrap.min.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/js/echarts.min.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/js/jquery-2.1.1.min.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/js/jquery.min.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/js/metisMenu.min.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/js/prism.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/js/zxxFile.js">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/LICENSE">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/morrisjs/morris.css">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/person-emotion.html">
+      <publishTime>03/01/2019 19:51:08</publishTime>
+    </File>
+    <File Include="camera/person.html">
+      <publishTime>02/27/2019 13:52:10</publishTime>
+    </File>
+    <File Include="camera/photo.html">
+      <publishTime>03/01/2019 18:43:54</publishTime>
+    </File>
+    <File Include="camera/photo2.html">
+      <publishTime>02/27/2019 13:52:27</publishTime>
+    </File>
+    <File Include="camera/README.md">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/testimg.html">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/UIback.html">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/vediotest.html">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="camera/visitrecord.html">
+      <publishTime>02/27/2019 13:46:29</publishTime>
+    </File>
+    <File Include="config.json">
+      <publishTime>03/01/2019 16:25:05</publishTime>
+    </File>
+    <File Include="css/font-awesome.min.css">
+      <publishTime>03/01/2019 15:38:50</publishTime>
+    </File>
+    <File Include="css/main.css">
+      <publishTime>03/01/2019 15:38:50</publishTime>
+    </File>
+    <File Include="eventlog.xml">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="index.html">
+      <publishTime>03/01/2019 19:08:36</publishTime>
+    </File>
+    <File Include="login.html">
+      <publishTime>03/01/2019 18:43:54</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>11/14/2018 19:57:51</publishTime>
+    </File>
+    <File Include="visit/visitlist.html">
+      <publishTime>02/27/2019 13:36:29</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/01/2019 19:51:53</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

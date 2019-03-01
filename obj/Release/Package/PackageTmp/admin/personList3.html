@@ -1,0 +1,621 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+    <title>天眼后台管理系统-Person列表</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+    <link href="js/ion.rangeSlider-1.8.2/css/ion.rangeSlider.css" rel="stylesheet">
+    <link href="js/ion.rangeSlider-1.8.2/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+    <section>
+        <!-- left side start-->
+        <div class="left-side sticky-left-side">
+            <!--logo and iconic logo start-->
+            <div class="logo">
+               <img src="images/logo.png" alt="">
+            </div>
+            <div class="logo-icon text-center">
+                <img src="images/logo_icon.png" alt="">
+            </div>
+            <!--logo and iconic logo end-->
+            <div class="left-side-inner">
+                <!-- visible to small devices only -->
+                <div class="visible-xs hidden-sm hidden-md hidden-lg">                   
+                </div>
+                <ul class="nav nav-pills nav-stacked custom-nav">
+                    <li class="menu-list">
+                        <a href="index.html"><i class="fa fa-home"></i> <span>天眼干预管理系统</span></a>
+                        <ul class="sub-menu-list" style="display: block">
+                            <li class="menu-list">
+                                <a href=""><span>厦门市</span></a>
+                                <ul class="sub-menu-list" style="display: block">
+
+                                    <li class="menu-list">
+                                        <a href=""><span>湖里区</span></a>
+                                        <ul class="sub-menu-list" style="display: block">
+                                            <li class="active"><a href=""> 祥店里29号</a></li>
+                                            <li><a href=""> 南山路430-433禹洲新村 </a></li>
+                                            <li><a href=""> 南山路53之附近</a></li>
+                                            <li><a href=""> 凤山路514-520号金尚小区</a></li>
+                                            <li><a href=""> 南山路205附近</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="menu-list">
+                                        <a href=""><span>思明区</span></a>
+                                        <ul class="sub-menu-list" style="display: block">
+
+                                            <li><a href=""> 定安路34-36号</a></li>
+                                            <li><a href=""> 厦禾路509号-129</a></li>
+                                            <li><a href=""> 角滨路8号店面之27</a></li>
+                                            <li><a href=""> 禾祥西路246-3号附近</a></li>
+                                            <li><a href=""> 故宫路77号</a></li>
+
+                                        </ul>
+                                    </li>    
+                                </ul>
+                            </li>
+                        
+                        </ul>
+                    </li>
+
+                </ul>
+                <!--sidebar nav start-->
+                <!--<ul class="nav nav-pills nav-stacked custom-nav">
+                    <li class="menu-list">
+                        <a href="index.html"><i class="fa fa-home"></i> <span>Manager</span></a>
+                        <ul class="sub-menu-list" style="display: block">
+                            <li class="menu-list">
+                                <a href="personList.html"><span>采集到的顾客列表</span></a>
+                                <ul class="sub-menu-list" style="display: block" id="persongroup">
+                                    <li><a href="personList.html?peronGroupKey=malegroup201704180818" target="_blank"><span>malegroup201704180818</span></a></li>
+                                    <li><a href="personList.html?peronGroupKey=femalegroup201704141255" target="_blank"><span>femalegroup201704141255</span></a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li class="menu-list">
+                                <a href="personList.html"><span>熟客列表</span></a>
+                                <ul class="sub-menu-list" style="display: block">
+                                    <li><a href="../admin/visitlist.html" target="_blank"><span>所有熟客</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                  
+                </ul>-->
+                <!--sidebar nav end-->
+            </div>
+        </div>
+        <!-- left side end-->
+        <!-- main content start-->
+        <div class="main-content">
+            <!-- header section start-->
+            <div class="header-section">
+                <!--toggle button start-->
+                <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+                <!--toggle button end-->
+                <!--search start-->
+                <form class="searchform" action="index.html" method="post">
+                    <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+                </form>
+                <!--search end-->
+            </div>
+            <!-- header section end-->
+            <!-- page heading start-->
+           
+            <div class="page-heading">
+                <h3>
+                    福建省
+                </h3>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#">厦门市</a>
+                    </li>
+                    <li class="active">  湖里区 </li>
+                </ul>
+            </div>
+          
+
+            <!-- page heading end-->
+            <!--body wrapper start-->
+            <div class="wrapper">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <section class="panel">
+                            <header class="panel-heading">
+                                祥店里29号
+                                <span class="tools pull-right">
+                                    <a href="javascript:;" class="fa fa-chevron-down"></a>
+                                    <a href="javascript:;" class="fa fa-times"></a>
+                                </span>
+                            </header>
+                            <div class="panel-body">
+
+                                <ul id="filters" class="media-filter">
+                                    <li><a id="malegroup201704180437" href="personList.html?peronGroupKey=malegroup201704180437" data-filter="*"> 男</a></li>
+                                    <li><a id="femalegroup201704180442" href="personList.html?peronGroupKey=femalegroup201704180442" data-filter=".images">女</a></li>
+
+                                </ul>
+
+                                <div id="gallery" class="media-gal personList">
+                                    
+                                </div>
+
+
+                            </div>
+                        </section>
+                    </div>
+                  
+                </div>
+            </div>
+            <div class="modal fade" id="mergePersonModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                            <h4 class="modal-title" id="myModalLabel">合并Person</h4>
+                        </div>
+                        <div class="modal-body row">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Person UserData</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group m-bot15">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                            </span>
+                                            <input type="text" class="form-control" id="txtPersonKey">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="panel panel-warning">
+                                <div class="panel-body" style="display: block;">
+                                    <div class="media-gal personList">
+                                        <div class="images item imgToolBox">
+                                            <a href="##"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-primary" id="btnModalSave" data-oldPersonKey="">保存</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--body wrapper end-->
+            <div class="modal fade" id="bindPersonModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                            <h4 class="modal-title" id="myModalLabel">合并Person</h4>
+                        </div>
+                        <div class="modal-body row">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Person UserData</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group m-bot15">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                            </span>
+                                            <input type="text" class="form-control" id="txtPersonKey">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="panel panel-warning">
+                                <div class="panel-body" style="display: block;">
+                                    <div class="media-gal personList">
+                                        <div class="images item imgToolBox">
+                                            <a href="##"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-primary" id="btnModalSave" data-face="">保存</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="bindPersonNameModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                            <h4 class="modal-title" id="myModalLabel">修改Person的名称</h4>
+                        </div>
+                        <div class="modal-body row">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">名称</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group m-bot15">
+                                            <input type="text" class="form-control" id="txtPersonName">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-primary" id="btnBindNameSave" data-person="">保存</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--footer section start-->
+            <footer class="">
+                2016 &copy; 天眼
+            </footer>
+            <!--footer section end-->
+        </div>
+        <!-- main content end-->
+    </section>
+    <!-- Placed js at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/modernizr.min.js"></script>
+    <script src="js/jquery.nicescroll.js"></script>
+    <script src="js/dist/clipboard.min.js"></script>
+    <!--common scripts for all pages-->
+    <script src="js/scripts.js"></script>
+    <script type="text/javascript">
+        var webapi = "";
+        // 对Date的扩展，将 Date 转化为指定格式的String
+        // 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，
+        // 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)
+        // 例子：
+        // (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423
+        // (new Date()).Format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18
+        Date.prototype.Format = function (fmt) { //author: meizz
+            var o = {
+                "M+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "h+": this.getHours(), //小时
+                "m+": this.getMinutes(), //分
+                "s+": this.getSeconds(), //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds() //毫秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+
+        function timeFormat(timeStr) {
+            var time = new Date(timeStr);
+            return time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate();
+        };
+
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        };
+
+        function getPerson(groupid) {
+            $("#" + groupid).css({
+                color: "#3f9a78"
+            });
+            $.ajax({               
+                url: webapi+"/persons/person/persongroup/" + groupid + "/index/1/500",
+                dataType: 'json',
+                success: function (data) {
+                   // $("#gallery").html("");
+                    for (var i = 0; i < data.length; i++) {
+                        initContainer(data[i].personKey, data[i].coverFaceKey, data[i].facesCount, new Date(data[i].lastAddFaceDate), data[i].isNew, data[i].learningQueueCount, data[i].newFaceCount, data[i].userName, groupid, data[i].personType, data[i].isTBC)
+                    }
+                }
+            });
+        };
+
+
+
+        function initContainer(personKey, faceKey, faceCount, lastAddFaceDate, isNew, learningQueueCount, newFaceCount, userName, groupid,personType,isTBC) {
+            
+            var personhtml = [
+                '<div class="images item imgToolBox" id="person' + personKey + '">',
+                '<a href="profile.html?personkey=' + personKey + '&personGroupKey=' + groupid + '" target="_blank" id="' + faceKey + '"></a>',
+                '<span class="irs" id="irs-6">',
+                '<span class="irs">',
+                '<span class="irs-line">',
+                '<span class="irs-line-left"></span>',
+                '<span class="irs-line-mid"></span>',
+                '<span class="irs-line-right"></span>',
+                '</span>',
+                '<span class="irs-diapason" style="left: 0px; width: ' + (learningQueueCount / 248) * 158 + 'px;"></span>',
+                '</span>',
+                '<span class="irs-grid"></span>',
+                '</span>',
+                '<div class="imgTools in">',
+                '<a href="##" id="name_' + personKey + '">' + userName + '</a>',
+                '</div>',
+                '<div class="imgTools in">',
+                '<a href="##" class="tooltips" data-toggle="tooltip" data-placement="top" data-original-title="修改名字">',
+                '<i class="fa fa-cog" data-person="' + personKey + '"></i>',
+                '</a>',
+                '<a href="##" class="tooltips" data-toggle="tooltip" data-placement="top" data-original-title="合并到Person">',
+                '<i class="fa fa-chain" data-person="' + personKey + '"></i>',
+                '</a>',
+                '<a href="##" class="tooltips" data-toggle="tooltip" data-placement="top" data-original-title="复制personKey">',
+                '<i class="fa fa-copy" data-person="' + personKey + '" data-clipboard-text="' + personKey + '"></i>',
+                '</a>',
+                '<a href="##" class="deleteFace tooltips" data-toggle="tooltip" data-placement="top" data-original-title="删除" >',
+                '<i class="fa fa-times text-danger" data-person="' + personKey + '"></i>',
+                '</a>',
+                '</div>'
+            ]
+
+            if (isNew == true) {
+                personhtml.push('<span class="badge badge-important badge-left">New!</span>');
+            }
+            if (newFaceCount != 0) {
+                personhtml.push('<span class="badge badge-important badge-right">' + faceCount + '</span>');
+            } else {
+                personhtml.push('<span class="badge badge-success badge-right">' + faceCount + '</span>');
+            }
+            if (isTBC != 0 && personType == 0) {
+                personhtml.push('<span class="badge badge-warning badge-left">有待确认的Face</span>');
+            }
+            if (personType != 0)
+            {
+                personhtml.push('<span class="badge badge-warning badge-left">临时Person</span>');
+            }
+           
+            personhtml.push('</div>');
+
+            $("#gallery").append(personhtml.join(" "));
+
+            if (faceKey != '') {
+                setCoverPhoto(faceKey);
+            }
+        };       
+
+        function setCoverPhoto(faceKey) {
+            $.ajax({              
+                url: webapi+"/persons/face/thumbnai/" + faceKey + "",
+                dataType: 'json',
+                success: function (result) {
+                    var faceid = result.faceKey;
+                    $('#' + faceid).html('<img data-faceKey=' + faceid + '  src="' + result.thumbnaiPath + ' " />')
+                }
+            });
+        };
+
+        function GetPersonGroupList() {
+            $.ajax({
+                url: webapi+"/persons/group/index",
+                dataType: 'json',
+                type: "Get",
+                success: function (PersonGroupList) {
+                    for (var i = 0; i < PersonGroupList.length; i++) {
+                        var UserData = PersonGroupList[i].userData;
+                        var url = "personList.html?peronGroupKey=" + UserData + "";
+                        $('#persongroup').append("<li><a href="+url+" data-person='" + UserData + "'><span>" + UserData + "</span></a></li>");
+                    }
+                    groupid = PersonGroupList[0].UserData;
+                }
+            })
+        }
+
+
+        $(function () {
+            $.getJSON("../config.json", function (data) {
+                webapi = data.webapi;
+                console.log(webapi);
+           
+            GetPersonGroupList();
+            var groupid = getQueryString('peronGroupKey');         
+            if (groupid != '') {
+                getPerson(groupid);
+            }           
+
+            var clipboard = new Clipboard('.fa-copy');
+
+            clipboard.on('success', function (e) {
+                alert("复制成功！");
+                console.log(e);
+            });
+
+            clipboard.on('error', function (e) {
+                console.log(e);
+            });
+            
+            //$('#persongroup').delegate("a", "click", function () {
+            //    groupid = $(this).data("person");
+            //    getPerson(groupid);
+            //});
+
+            $("#gallery").delegate(".fa-chain", "click", function () {
+                $("#mergePersonModal #btnModalSave").data("oldPersonKey", $(this).data("person"));
+                $("#mergePersonModal #txtPersonKey").val("");
+                $("#mergePersonModal .images a").html('')
+                $('#mergePersonModal').modal({
+                    keyboard: false
+                });
+            });
+
+            $("#gallery").delegate(".fa-times", "click", function () {
+                var personKey = $(this).data("person");
+                $.ajax({                  
+                    url: webapi+"/persons/person/persongroups/" + groupid + "/persons/" + personKey + "",
+                    dataType: 'json',
+                    type: 'Delete',
+                    success: function (result) {
+                        $('#person' + personKey).remove();
+                    },
+                    error: function (msg) {
+                        console.log(msg);
+                    }
+                });
+            });
+
+            //将face绑定到person
+            $("#bindPersonModal #btnModalSave").click(function () {
+                var faceKey = $(this).data("face");
+                var personKey = $("#bindPersonModal #txtPersonKey").val();
+                $.ajax({                   
+                    url: webapi+"/persons/face/remove/persongroups/" + groupid + "/persons/" + personKey + "/faces/" + faceKey + "",
+                    dataType: 'json',
+                    type: "Put",
+                    success: function (result) {
+                        $('#bindPersonModal').modal('hide');
+                        $("#face" + faceKey).remove();
+                    }
+                });
+            });
+
+
+            $("#galleryUnKnow").delegate(".fa-chain", "click", function () {
+                $("#bindPersonModal #btnModalSave").data("face", $(this).data("face"));
+                console.log($(this).data("face"));
+                $("#bindPersonModal #txtPersonKey").val("");
+                $("#bindPersonModal .images a").html('')
+                $('#bindPersonModal').modal({
+                    keyboard: false
+                });
+            });
+
+            $("#gallery").delegate(".fa-cog", "click", function () {
+                $("#bindPersonNameModal #btnBindNameSave").data("person", $(this).data("person"));
+                $("#bindPersonNameModal #txtPersonName").val($('#name_' + $(this).data("person")).html());
+                $('#bindPersonNameModal').modal({
+                    keyboard: false
+                });
+            });
+
+            $("#bindPersonNameModal #btnBindNameSave").click(function () {
+                var personKey = $(this).data("person");
+                var personName = $("#bindPersonNameModal #txtPersonName").val();
+                $.ajax({                  
+                    url: webapi+"/persons/personTest/persongroup/" + groupid + "/persons/" + personKey + "/" + personName + "",
+                    dataType: 'json',
+                    type: "Put",
+                    success: function (result) {
+                        $('#name_' + personKey).html(personName);
+                        $('#bindPersonNameModal').modal('hide');
+
+                    }
+                });
+            });
+
+            $("#galleryUnKnow").delegate(".fa-times", "click", function () {
+                var faceKey = $(this).data("face");
+                $.ajax({                  
+                    url: webapi+"/persons/face/persistedFaces/" + faceKey + "",
+                    dataType: 'json',
+                    type: 'Delete',
+                    success: function (result) {
+                        $("#face" + faceKey).remove();
+                    },
+                    error: function (msg) {
+                        console.log(msg);
+                    }
+                });
+            });
+
+            //输入PersonKey后点击搜索按钮，加载该Person的封面图
+            $("#bindPersonModal .fa-search").click(function () {
+                var personKey = $("#bindPersonModal #txtPersonKey").val();
+                $.ajax({                   
+                    url: webapi+"/persons/face/coverFace/" + personKey + "",
+                    dataType: 'json',
+                    success: function (result) {
+                        var faceKey = result.coverFaceKey;
+                        $.ajax({                           
+                            url: webapi+"/persons/face/thumbnai/" + faceKey + "",
+                            dataType: 'json',
+                            success: function (result) {
+                                $("#bindPersonModal .images a").html('<img data-faceKey=' + faceKey + ' src="' + result.thumbnaiPath + ' " />')
+                            }
+                        });
+                    }
+                });
+
+
+
+            });
+
+            //输入PersonKey后点击搜索按钮，加载该Person的封面图
+
+            $("#mergePersonModal .fa-search").click(function () {
+                var personKey = $("#mergePersonModal #txtPersonKey").val();
+                $.ajax({                    
+                    url: webapi+"/persons/face/coverFace/" + personKey + "",
+                    dataType: 'json',
+                    success: function (result) {
+                        var faceKey = result.coverFaceKey;
+                        $.ajax({                          
+                            url: webapi+"/persons/face/thumbnai/" + faceKey + "",
+                            dataType: 'json',
+                            success: function (result) {
+                                $("#mergePersonModal .images a").html('<img data-faceKey=' + faceKey + '  src="' + result.thumbnaiPath + '" />')
+                            }
+                        });
+                    },
+                    error: function (msg) {
+                        console.log(msg);
+                    }
+                });
+
+
+
+            });
+
+
+
+            //合并person
+            $("#mergePersonModal #btnModalSave").click(function () {
+                var oldPersonKey = $(this).data("oldPersonKey");
+                var persons = [
+                    oldPersonKey, $("#mergePersonModal #txtPersonKey").val()
+                ];
+                var personKeys = persons.join(";")
+                $.ajax({                    
+                    url: webapi+"/persons/person/merge/personGroup/" + groupid + "/person/" + personKeys + "",
+                    dataType: 'json',
+                    type: "Put",
+                    success: function (result) {
+                        var newPersonKey = result.personKey;
+                        //得到需要在页面上移除的person
+                        var removePersons = $.grep(persons, function (value) {
+                            return value != newPersonKey;
+                        });
+                        $.grep(removePersons, function (value) {
+                            $('#mergePersonModal').modal('hide');
+                            $("#person" + value).remove();
+                        });
+                    }
+                });
+            });
+            })
+        });
+    </script>
+</body>
+
+</html>
