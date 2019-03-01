@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width">
+		
+		<title>Camera</title>
+		
+		
+		<link rel="stylesheet" href="css/fonts.css">
+		<link rel="stylesheet" href="css/layout.css">
+
+		<link rel="stylesheet" href="css/camera.css">
+		<link rel="stylesheet" href="css/prism.css">
+		
+		<script src="js/jquery-2.1.1.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="js/prism.js"></script>
+		<script src="dist/camera.js"></script>
+        <style>
+            #tooltip{
+                width: 200px;
+                border: 1px solid #b3d4fc;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: rgba(255, 255,255, 0.8);
+                z-index: 666;
+                display: none;
+            }
+            p{margin:5px}
+            #pie{
+                width: 200px; height: 200px; margin: 0 auto
+            }
+        </style>
+	</head>
+	
+	<body>
+
+		<section class="main">
+			<label>Çëµã»÷ÅÄÕÕ</label><span class="input icon-camera camera"></span>
+			<div class="image-container">
+				
+			</div>
+            
+		</section>
+        <section class="result">
+            <div class="tip">
+                <label class="anger">·ßÅ­</label>
+                <label class="happiness">ÐÒ¸£</label>
+                <label class="surprise">¾ªÏ²</label>
+                <label class="contempt">ÇáÃï</label>
+                <label class="disgust">Ñá¶ñ</label>
+                <label class="fear">º¦ÅÂ</label>
+                <label class="neutral">ÖÐÐÔ</label>
+                <label class="sadness">ÄÑ¹ý</label>
+
+            </div>
+            <img class="cur"/>
+            <div class="row thumbnaiface">
+
+            </div>
+        </section>
+        <div id="tooltip"></div>
+		<script type="text/javascript">
+			
+			var camera;
+			
+			function startCamera() {
+				if(camera) {
+					camera.start();
+				} else {
+				    camera = new Camera({
+						mirror : false,
+						onSnap : function(encode) {
+							var el = document.getElementsByClassName('image-container')[0];
+							var img = new Image();
+							
+							img.onload = function () {
+							    $(el).prepend(img)		
+							}
+							img.className = 'avatar';
+							img.src = encode;
+							img.onclick = function (e) {
+							    $(".cur").attr("src", this.src);
+							    var p = this.src.split(',');
+			
+		
+                                $.ajax({
+                                    url: "https://42.159.143.119/aitest/persons/face/test",
+                                    dataType: 'json',
+                                    type: "POST",
+                                    data: p[1],
+                                    success: function (data) {
+                                        var facelist = data.facelist;
+                                        for (var i = 0; i < facelist.length; i++) {
+                                            $(".thumbnaiface").append("<div class='faces' id='person" + facelist[i].personKey + "'></div>")
+                                            getfacekeys(facelist[i].personKey)
+                                        }
+
+                                    }
+                                });
+							}
+						}
+					});
+					camera.start();
+				}
+			}
+
+			function getfacekeys(personkey) {
+			    $.ajax({
+			        url: "https://42.159.143.119/aitest/persons/face/personGroup/test/person/" + personkey + "/count/8/",
+			        dataType: 'json',
+			        success: function (data) {
+			            var facesList = data.faces,
+                            personkey = data.personKey
+			            for (var i = 0; i < facesList.length; i++) {
+			                geThumbnai(personkey,facesList[i].faceid)
+			            }
+			        }
+			    })
+			}
+			
+			function geThumbnai(personkey, faceKey) {
+			    $.ajax({
+			        url: "https://42.159.143.119/aitest/persons/face/thumbnai/" + faceKey,
+			        dataType: 'json',
+			        success: function (data) {                     
+			            $("#person" + personkey).append("<img class='thumbnais' onmouseleave='leave()' onmouseenter='tooltip(this)' data-faceKey=" + faceKey + " src='data:image/png;base64," + data.thumbnaiContent + "' />")
+			        }
+			    })
+			}
+			startCamera();
+			function tooltip(target) {
+			   
+			    var facekey = $(target).data().facekey;
+			    $.ajax({
+			        url: "https://42.159.143.119/aitest/persons/face/full/" + $(target).data().facekey,
+			        dataType: 'json',
+			        success: function (result) {
+			            var tool = document.getElementById("tooltip");
+			            tool.innerHTML = "<div id='pie'></div>";
+			            tool.style.left = target.offsetLeft + 50 + "px";
+			            tool.style.top = target.offsetTop + 50 + "px";
+			            tool.style.display = "block";
+			           
+                       var data = [
+                            { name: "anger", y: parseFloat(result.anger * 10000) },
+                            { name: "happiness", y: parseFloat(result.happiness * 10000) },
+                            { name: "surprise", y: parseFloat(result.surprise * 10000) },
+                            { name: "contempt", y: parseFloat(result.contempt * 10000) },
+                            { name: "disgust", y: parseFloat(result.disgust * 10000) },
+                            { name: "fear", y: parseFloat(result.fear * 10000) },
+                            { name: "neutral", y: parseFloat(result.neutral * 10000) },
+                            { name: "sadness", y: parseFloat(result.sadness * 10000) }
+
+                        ]
+			            $('#pie').highcharts({
+			                chart: {
+
+			                    type: 'pie'
+			                },
+			                colors: ['#c9302c', '#f74074', '#ec971f', '#bdc3c7', '#2e3c84', '#444', '#449d44'],
+			                title: {
+			                    text: null
+			                },
+			                plotOptions: {
+			                    pie: {
+
+			                        dataLabels: {
+			                            enabled: false,
+			                        }
+			                    }
+			                },
+			                credits: { enabled: false, },
+			                series: [{
+			                    data: data
+			                }]
+			            });
+			        }
+			    })
+               
+
+			}
+
+			function leave() {
+			    document.getElementById("tooltip").style.display = "none";
+			}
+   
+		</script>
+	</body>
+</html>

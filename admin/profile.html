@@ -1,0 +1,590 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+    <title>天眼后台管理系统-Person详细信息</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="sticky-header">
+    <section>
+        <!-- left side start-->
+        <div class="left-side sticky-left-side">
+            <!--logo and iconic logo start-->
+            <div class="logo">
+                <img src="images/logo.png" alt="">
+            </div>
+            <div class="logo-icon text-center">
+               <img src="images/logo_icon.png" alt="">
+            </div>
+            <!--logo and iconic logo end-->
+            <div class="left-side-inner">
+                <!-- visible to small devices only -->
+                <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                </div>
+                <!--sidebar nav start-->
+                <ul class="nav nav-pills nav-stacked custom-nav">
+                    <li class="menu-list"><a href="index.html"><i class="fa fa-home"></i> <span>Manager</span></a>
+                        <ul class="sub-menu-list" style="display: block">
+                            <li><a href="personList.html"> All Person</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!--sidebar nav end-->
+            </div>
+        </div>
+        <!-- left side end-->
+        <!-- main content start-->
+        <div class="main-content">
+            <!-- header section start-->
+            <div class="header-section">
+                <!--toggle button start-->
+                <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+                <!--toggle button end-->
+                <!--search start-->
+                <form class="searchform" action="index.html" method="post">
+                    <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+                </form>
+                <!--search end-->
+            </div>
+            <!-- header section end-->
+            <!-- page heading start-->
+            <!--<div class="page-heading">-->
+            <!--Page Tittle goes here-->
+            <!--</div>-->
+            <!-- page heading end-->
+            <!--body wrapper start-->
+            <div class="wrapper">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <div class="profile-pic text-center"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <ul class="p-info">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <section class="panel">
+                                    <header class="panel-heading">
+                                        Face列表
+                                        <span class="tools pull-right">
+                                <a href="javascript:;" class="fa fa-chevron-down"></a>
+                                <a href="javascript:;" class="fa fa-times"></a>
+                             </span>
+                                    </header>
+                                    <div class="panel-body">
+                                        <ul id="filters" class="media-filter">
+                                             <li><a href="#" data-filter="*"> 所有</a></li>
+<li><a href="#" data-filter=".highQuality">高质量</a></li>
+<li><a href="#" data-filter=".lowQuality">低质量</a></li>
+<li><a href="#" data-filter=".machineLearning">用于机器学习的</a></li>
+<li><a href="#" data-filter=".normal">不用于机器学习的</a></li>
+<li><a href="#" data-filter=".isTBC">待确认</a></li>
+ 
+                                        </ul>
+                                        <!-- <div class="btn-group pull-right">
+    <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-check-square-o"></i> 全选</button>
+    <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-folder-open"></i> 移动到陌生人组</button>
+    <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-trash-o"></i> 删除</button>
+       <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-upload"></i> Upload New File</button>
+</div>
+ -->
+                                        <div id="gallery" class="media-gal personList">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 text-center clearfix">
+                                        <!-- <ul class="pagination">
+    <li><a href="#">«</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">»</a></li>
+</ul>
+ -->
+                                    </div>
+                            </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="bindPersonModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                            <h4 class="modal-title" id="myModalLabel">绑定到Person</h4>
+                        </div>
+                        <div class="modal-body row">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Person UserData</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group m-bot15">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                              </span>
+                                            <input type="text" class="form-control" id="txtPersonKey">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="panel panel-warning">
+                                <div class="panel-body" style="display: block;">
+                                    <div class="media-gal personList">
+                                        <div class="images item imgToolBox">
+                                            <a href="##"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-primary" id="btnModalSave" data-face="">保存</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--body wrapper end-->
+            <!--footer section start-->
+            <footer class="">
+               
+            </footer>
+            <!--footer section end-->
+        </div>
+        <!-- main content end-->
+    </section>
+    <!-- Placed js at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/modernizr.min.js"></script>
+    <script src="js/jquery.nicescroll.js"></script>
+
+    <script src="js/jquery.isotope.js"></script>
+    <!--Sparkline Chart-->
+    <script src="js/sparkline/jquery.sparkline.js"></script>
+    <script src="js/sparkline/sparkline-init.js"></script>
+    <!--google map-->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&AMP;sensor=false"></script> -->
+    <!--common scripts for all pages-->
+    <script src="js/scripts.js"></script>
+    
+    <script>
+        var webapi = "";
+    // //google map
+    // function initialize() {
+    //     var myLatlng = new google.maps.LatLng(-37.815207, 144.963937);
+    //     var mapOptions = {
+    //         zoom: 15,
+    //         scrollwheel: false,
+    //         center: myLatlng,
+    //         mapTypeId: google.maps.MapTypeId.ROADMAP
+    //     }
+    //     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    //     var marker = new google.maps.Marker({
+    //         position: myLatlng,
+    //         map: map,
+    //         title: 'Hello World!'
+    //     });
+    // }
+    // google.maps.event.addDomListener(window, 'load', initialize);
+
+    // 对Date的扩展，将 Date 转化为指定格式的String
+    // 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符， 
+    // 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字) 
+    // 例子： 
+    // (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423 
+    // (new Date()).Format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18 
+    Date.prototype.Format = function(fmt) { //author: meizz 
+        var o = {
+            "M+": this.getMonth() + 1, //月份 
+            "d+": this.getDate(), //日 
+            "h+": this.getHours(), //小时 
+            "m+": this.getMinutes(), //分 
+            "s+": this.getSeconds(), //秒 
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+            "S": this.getMilliseconds() //毫秒 
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return fmt;
+    }
+
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    };
+
+
+    function getPerson(personkey, personGroupKey) {
+        $.ajax({           
+            url: webapi+"/persons/person/" + personkey + "",
+            dataType: 'json',
+            success: function(data) {
+                var personhtml = ['<li>',
+                    '<div class="title">性别</div>',
+                    '<div class="desk">' + data.gender + '</div>',
+                    '</li>',
+                    '<li>',
+                    '<div class="title">年龄</div>',
+                    '<div class="desk">' + data.age + '</div>',
+                    '</li>',
+                    '<li>',
+                    '<div class="title">Face总数</div>',
+                    '<div class="desk">' + data.facesCount + '</div>',
+                    '</li>',
+                    '<li>',
+                    '<div class="title">机器学习的Face个数</div>',
+                    '<div class="desk">' + data.learningQueueCount + '</div>',
+                    '</li>',
+                    '<li>',
+                    '<div class="title">高质量Face个数</div>',
+                    '<div class="desk">' + data.highQualityCount + '</div>',
+                    '</li>',
+                    '<li>',
+                    '<div class="title">低质量Face个数</div>',
+                    '<div class="desk">' + data.lowQualityCount + '</div>',
+                    '<div class="title"><a href="../camera/person.html?personkey=' + personkey + '&groupkey=' + personGroupKey + '" target="_blank">详细列表页</a></div>'
+                    //',<li>',
+                    //'<div class="title">最后一次机器学习时间</div>',
+                    //'<div class="desk">' + new Date(data.lastMachineLearningDate).Format("yyyy-MM-dd hh:mm") + '</div>',
+                    //'</li>'
+                ];
+
+                if (data.parentPerson != '')
+                {
+                    personhtml.push(['<div class="title"><a href="profile.html?personkey=' + data.parentPerson + '&personGroupKey=' + data.parentPersonGroup + '" target="_blank">查看父级</a></div>']);
+                   
+                }
+
+                personhtml.push(['</li>']);
+
+                $(".p-info").append(personhtml.join(" "));
+                setCoverPhoto(data.coverFaceKey);
+                getPhotoList(personkey, 1, 200, personGroupKey);
+            }
+        });
+    };
+
+    function setCoverPhoto(faceKey) {
+        $.ajax({           
+            url: webapi+"/persons/face/thumbnai/" + faceKey + "",
+            dataType: 'json',
+            success: function(result) {
+                var faceid = result.faceKey;
+                $('.profile-pic').html('<img data-faceKey=' + faceid + '  src="' + result.thumbnaiPath + '" />')
+            }
+        });
+    };
+
+    function getPhotoList(personKey, pageIndex, pageSize, personGroupKey) {
+        $.ajax({           
+            url: webapi+"/persons/face/personGroup/" + personGroupKey + "/person/" + personKey + "/" + pageIndex + "/" + pageSize + "",
+            dataType: 'json',
+            success: function(data) {
+                for (var i = 0; i < data.faces.length; i++) {
+                    initContainer(data.personKey, data.faces[i]);
+                }
+            }
+        });
+    };
+
+    function initContainer(personKey, face) {
+
+        var classname = '<div class="images ';
+        if (face.isHighQuality) {
+            classname += " highQuality";
+        }
+        else {
+            classname += " lowQuality";
+        }
+        if (face.isLeanFace) {
+            classname += " machineLearning";
+        }
+        else {
+            classname += " normal";
+        }
+        if (face.isTBC){
+            classname += " isTBC";
+        }
+
+        classname += " item imgToolBox isotope-item";
+
+
+        var facehtml = [''+classname+'" id="' + face.faceid + '">',
+            '<a href="../camera/face.html?facekey=' + face.faceid + '" id="face' + face.faceid + '" target="_blank"></a>',
+            // '<a href="##"></a>',
+
+            '<div class="imgTools in">',
+            '<a href="##" class="tooltips" data-toggle="tooltip" data-placement="top" data-original-title="绑定到person">',
+            '<i class="fa fa-chain" data-face="' + face.faceid + '"></i>',
+            '</a>',            
+            '<a href="##" class="deleteFace tooltips" data-toggle="tooltip" data-placement="top" data-original-title="接除绑定">',
+            '<i class="fa fa-chain-broken " data-face="' + face.faceid + '"></i>',
+            '</a>'
+          
+        ]
+
+        if (face.isTBC == true) {
+            facehtml.push(['<a href="##" class="deleteFace tooltips" data-toggle="tooltip" data-placement="top" data-original-title="确认" >']);
+            facehtml.push(['<i class="fa fa-check" data-face="' + face.faceid + '"></i>']);
+            facehtml.push(['</a>']);
+        }
+        else {
+            facehtml.push(['<a href="##" class="deleteFace tooltips" data-toggle="tooltip" data-placement="top" data-original-title="删除" >']);
+            facehtml.push(['<i class="fa fa-times text-danger" data-face="' + face.faceid + '"></i>']);
+         facehtml.push(['</a>']);
+        }
+       
+        if(face.isLeanFace==true){
+            facehtml.push([ '<a href="##" class="deleteFace tooltips" data-toggle="tooltip" data-placement="top" data-original-title="移出机器学习" >']);
+            facehtml.push(['<i class="fa fa-mail-reply" data-face="' + face.faceid + '"></i>']);
+            facehtml.push(['</a></div>']);
+        }
+        else{
+            facehtml.push(['<a href="##" class="deleteFace tooltips" data-toggle="tooltip" data-placement="top" data-original-title="移进机器学习" >']);
+            facehtml.push(['<i class="fa fa-mail-forward" data-face="' + face.faceid + '"></i>']);
+          facehtml.push(['</a></div>']);
+        }
+        
+       
+
+        if (face.isNew == true) {
+            facehtml.push('<span class="badge badge-important badge-left">New!</span>');
+        }
+        if (face.isTBC == true) {
+            facehtml.push('<span class="badge  badge-warning badge-right">待确认!</span>');
+        }
+        facehtml.push('</div>');
+
+        $("#gallery").append(facehtml.join(" "));
+        setPhoto(face.faceid);
+    };
+
+    function setPhoto(faceKey) {
+        $.ajax({        
+            url: webapi+"/persons/face/thumbnai/" + faceKey + "",
+            dataType: 'json',
+            success: function(result) {
+                var faceid = result.faceKey;
+                $('#face' + faceid).html('<img data-faceKey=' + faceid + '  src="' + result.thumbnaiPath + '" />')
+            }
+        });
+    };
+
+        $(function () {
+            $.getJSON("../config.json", function (data) {
+                webapi = data.webapi;
+                console.log(webapi);
+           
+        var personkey = getQueryString('personkey');
+        var personGroupKey = getQueryString('personGroupKey');
+        getPerson(personkey, personGroupKey);
+
+        $("#gallery").delegate(".fa-times", "click", function() {
+            var faceKey = $(this).data("face");
+            $.ajax({               
+                url: webapi+"/persons/face/persistedFaces/" + faceKey + "",
+                dataType: 'json',
+                type: "Delete",
+                success: function(result) {
+                    $('#face' + faceKey).parent().remove();
+                    alert("删除成功!");
+                },
+                error: function(result) {
+                    console.log(result);
+                    alert("删除失败!");
+                }
+            });
+        });
+
+        $("#gallery").delegate(".fa-check", "click", function () {
+            var faceKey = $(this).data("face");
+            $.ajax({
+                url: webapi+"/persons/face/confirm/faces/"+faceKey+"",
+                dataType: 'json',
+                type: "Put",
+                success: function (result) {
+                   
+                    alert("确认成功!");
+                },
+                error: function (result) {
+                    console.log(result);
+                    alert("确认失败!");
+                }
+            });
+        });
+
+        $(".media-filter").delegate("a", "click", function () {
+            var filter = $(this).data("filter");
+            if (filter == "*")
+            {
+                $(".images").show();
+            } else {
+                $(".images").hide();
+                $(filter).show();
+            }           
+        });
+
+        //$(".media-filter").delegate(".highQuality", "click", function () {
+
+        //});
+
+        //移出机器学习
+        $("#gallery").delegate(".fa-mail-reply", "click", function () {
+            var faceKey = $(this).data("face");
+            $.ajax({
+                url: webapi+"/persons/face/remove/machine/persongroups/" + personGroupKey + "/persons/" + personkey + "/faces/" + faceKey + "",
+                dataType: 'json',
+                type: "Delete",
+                success: function (result) {
+                    //$('#face' + faceKey).parent().remove();
+                    $(this).attr("class", "fa fa-mail-forward");
+                    alert("从机器学习队列中移除成功!");
+                },
+                error: function (result) {
+                    console.log(result);
+                    alert("从机器学习队列中移除失败!");
+                }
+            });
+        });
+
+        //移进机器学习
+        $("#gallery").delegate(".fa-mail-forward", "click", function () {
+            var faceKey = $(this).data("face");
+            $.ajax({
+                url: webapi+"/persons/face/remove/normal/persongroups/" + personGroupKey + "/persons/" + personkey + "/faces/" + faceKey + "",
+                dataType: 'json',
+                type: "Delete",
+                success: function (result) {
+                    //$('#face' + faceKey).parent().remove();
+                    $(this).attr("class", "fa fa-mail-reply");
+                    alert("成功移进机器学习队列中!");
+                },
+                error: function (result) {
+                    console.log(result);
+                    alert("移进机器学习队列中失败!");
+                }
+            });
+        });
+
+        $("#gallery").delegate(".fa-chain", "click", function() {
+            $("#bindPersonModal #btnModalSave").data("face", $(this).data("face"));
+            $("#bindPersonModal #txtPersonKey").val("");
+            $("#bindPersonModal .images a").html('')
+            $('#bindPersonModal').modal({
+                keyboard: false
+            });
+        });
+
+        $("#gallery").delegate(".fa-chain-broken", "click", function() {
+            var faceKey = $(this).data("face");
+            var personKeyNew = "";
+            //创建新person
+            $.ajax({             
+                url: webapi+"/persons/person/persongroup/" + personGroupKey + "",   /******debug*/
+
+                dataType: 'json',
+                type: "Post",
+                async: false,
+                success: function(result) {
+                    personKeyNew = result.personKey;
+                },
+                error: function(result) {
+                    console.log(result);
+                }
+            });
+
+            //将Face与新Person绑定
+            $.ajax({                
+                url: webapi+"/persons/face/remove/persongroups/" + personGroupKey + "/persons/" + personKeyNew + "/faces/" + faceKey + "",
+
+                dataType: 'json',
+                type: "Put",
+                success: function(result) {
+                    $("#face" + faceKey).parent().remove();
+                },
+                error: function(result) {
+                    console.log(result);
+                }
+            });           
+        });       
+
+
+
+        $("#bindPersonModal .fa-search").click(function() {
+            var personKeyNew = $("#bindPersonModal #txtPersonKey").val();
+            $.ajax({               
+                url: webapi+"/persons/face/coverFace/" + personKeyNew + "",
+                dataType: 'json',
+                success: function(result) {
+                    var faceKey = result.coverFaceKey;
+                    $.ajax({                       
+                        url: webapi+"/persons/face/thumbnai/" + faceKey + "",
+                        dataType: 'json',
+                        success: function(result) {
+                            $("#bindPersonModal .images a").html('<img data-faceKey=' + faceKey + '  src="' + result.thumbnaiPath + ' " />')
+                        }
+                    });
+                }
+            });
+
+
+
+        });
+
+        //debug
+        //将face绑定到person
+        $("#bindPersonModal #btnModalSave").click(function() {
+            var faceKey = $(this).data("face");
+            var personKeyNew = $("#bindPersonModal #txtPersonKey").val();
+            $.ajax({              
+                url: webapi+"/persons/face/remove/persongroups/" + personGroupKey + "/persons/" + personKeyNew + "/faces/" + faceKey + "",
+                dataType: 'json',
+                type: "Put",
+                success: function(result) {
+                    $('#bindPersonModal').modal('hide')
+                    $("#face" + faceKey).parent().remove();
+                }
+            });
+                });
+            })
+    })
+    </script>
+</body>
+
+</html>
